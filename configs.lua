@@ -14,7 +14,7 @@ records = {
 		framework = "Torch",
 		library = "(native)",
 		class = "SpatialConvolutionMM",
-		reproduced = nil,
+		reproduced = true,
 	},
 	{
 		config = "Torch + fbfft",
@@ -22,8 +22,9 @@ records = {
 		suites = "convnet",
 		framework = "Torch",
 		library = "fbfft",
-		class = "fbnn.SpatialConvolution",
-		reproduced = nil,
+		class = "nn.SpatialConvolutionMM",
+		note = "should actually be called 'fbcunn'? dont use fbcunn.SpatialConvolution",
+		reproduced = true,
 	},
 	{
 		config = "Torch + cuDNN(R2)",
@@ -53,7 +54,7 @@ records = {
 		library = {"cuDNN", "R4"},
 		class = "cudnn.SpatialConvolution",
 		precision = 32,
-		reproduced = nil,
+		reproduced = true,
 	},
 	{
 		config = "Torch + cudaconvnet2",

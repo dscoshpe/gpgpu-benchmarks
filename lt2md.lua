@@ -58,7 +58,7 @@ local function formatField(field)
 	end
 
 	-- otherwise, just return the field as is
-	return field
+	return tostring(field)
 end
 
 -- format headers

@@ -8,11 +8,11 @@ Tracking known system configurations.
 
 | config | framework | library | precision | note | reproduced | priority |
 | --- |--- |--- |--- |--- |--- |--- |
-| Torch (native) | [Torch](http://torch.ch/) | (native) |  |  |  |  |
-| Torch + fbfft | [Torch](http://torch.ch/) | [fbfft](https://github.com/facebook/fbcunn/tree/master/src/fft) |  |  |  |  |
+| Torch (native) | [Torch](http://torch.ch/) | (native) |  |  | true |  |
+| Torch + fbfft | [Torch](http://torch.ch/) | [fbfft](https://github.com/facebook/fbcunn/tree/master/src/fft) |  | should actually be called 'fbcunn'? dont use fbcunn.SpatialConvolution | true |  |
 | Torch + cuDNN(R2) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R2 |  |  |  |  |
 | Torch + cuDNN(R4, 16) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 16 | CUDA 7.5 for FP16 precision |  |  |
-| Torch + cuDNN(R4, 32) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 32 |  |  |  |
+| Torch + cuDNN(R4, 32) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 32 |  | true |  |
 | Torch + cudaconvnet2 | [Torch](http://torch.ch/) | [cudaconvnet2](https://code.google.com/p/cuda-convnet/) |  |  |  |  |
 | Torch + clnn | [Torch](http://torch.ch/) | [clnn](https://github.com/hughperkins/clnn) |  | OpenCL only (I think) |  |  |
 | Caffe (native) | [Caffe](https://github.com/BVLC/caffe) | (native) |  | cuDNN is optional |  |  |

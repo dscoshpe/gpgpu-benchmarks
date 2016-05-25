@@ -1,0 +1,83 @@
+
+Running on device: Quadro K6000	
+ModelType: AlexNet	Kernels: nn	Input shape: 128x3x224x224	
+nn                                      :updateOutput():     191.91	
+nn                                   :updateGradInput():     130.45	
+nn                                 :accGradParameters():     188.28	
+nn                                             :Forward:     191.91	
+nn                                            :Backward:     318.73	
+nn                                               :TOTAL:     510.64	
+ModelType: OverFeat[fast]	Kernels: nn	Input shape: 128x3x231x231	
+nn                                      :updateOutput():     675.29	
+nn                                   :updateGradInput():     390.50	
+nn                                 :accGradParameters():     542.92	
+nn                                             :Forward:     675.29	
+nn                                            :Backward:     933.42	
+nn                                               :TOTAL:    1608.71	
+ModelType: VGG Model-A	Kernels: nn	Input shape: 64x3x224x224	
+nn                                      :updateOutput():     566.38	
+nn                                   :updateGradInput():     655.19	
+nn                                 :accGradParameters():     696.86	
+nn                                             :Forward:     566.38	
+nn                                            :Backward:    1352.05	
+nn                                               :TOTAL:    1918.43	
+
+Running on device: Quadro K6000	
+ModelType: AlexNet	Kernels: cudnn	Input shape: 128x3x224x224	
+cudnn                                   :updateOutput():      56.31	
+cudnn                                :updateGradInput():      42.10	
+cudnn                              :accGradParameters():      62.35	
+cudnn                                          :Forward:      56.31	
+cudnn                                         :Backward:     104.44	
+cudnn                                            :TOTAL:     160.75	
+ModelType: OverFeat[fast]	Kernels: cudnn	Input shape: 128x3x231x231	
+cudnn                                   :updateOutput():     256.78	
+cudnn                                :updateGradInput():     213.49	
+cudnn                              :accGradParameters():     268.18	
+cudnn                                          :Forward:     256.78	
+cudnn                                         :Backward:     481.67	
+cudnn                                            :TOTAL:     738.45	
+ModelType: VGG Model-A	Kernels: cudnn	Input shape: 64x3x224x224	
+cudnn                                   :updateOutput():     309.95	
+cudnn                                :updateGradInput():     314.62	
+cudnn                              :accGradParameters():     380.50	
+cudnn                                          :Forward:     309.95	
+cudnn                                         :Backward:     695.12	
+cudnn                                            :TOTAL:    1005.07	
+ModelType: GoogleNet	Kernels: cudnn	Input shape: 128x3x224x224	
+cudnn                                   :updateOutput():     243.69	
+cudnn                                :updateGradInput():     359.03	
+cudnn                              :accGradParameters():     283.87	
+cudnn                                          :Forward:     243.69	
+cudnn                                         :Backward:     642.89	
+cudnn                                            :TOTAL:     886.58	
+
+Running on device: Quadro K6000	
+ModelType: AlexNet	Kernels: fbnn	Input shape: 128x3x224x224	
+fbnn                                    :updateOutput():     190.89	
+fbnn                                 :updateGradInput():     126.80	
+fbnn                               :accGradParameters():     188.22	
+fbnn                                           :Forward:     190.89	
+fbnn                                          :Backward:     315.02	
+fbnn                                             :TOTAL:     505.91	
+ModelType: OverFeat[fast]	Kernels: fbnn	Input shape: 128x3x231x231	
+fbnn                                    :updateOutput():     683.37	
+fbnn                                 :updateGradInput():     386.85	
+fbnn                               :accGradParameters():     542.84	
+fbnn                                           :Forward:     683.37	
+fbnn                                          :Backward:     929.69	
+fbnn                                             :TOTAL:    1613.07	
+ModelType: VGG Model-A	Kernels: fbnn	Input shape: 64x3x224x224	
+fbnn                                    :updateOutput():     551.66	
+fbnn                                 :updateGradInput():     615.91	
+fbnn                               :accGradParameters():     698.29	
+fbnn                                           :Forward:     551.66	
+fbnn                                          :Backward:    1314.20	
+fbnn                                             :TOTAL:    1865.86	
+ModelType: GoogleNet	Kernels: fbnn	Input shape: 128x3x224x224	
+fbnn                                    :updateOutput():     892.82	
+fbnn                                 :updateGradInput():     735.18	
+fbnn                               :accGradParameters():     904.12	
+fbnn                                           :Forward:     892.82	
+fbnn                                          :Backward:    1639.29	
+fbnn                                             :TOTAL:    2532.11	

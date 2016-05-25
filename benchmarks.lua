@@ -38,6 +38,7 @@ records = {
 		data = "ImageNet",
 		input = "64x3x224x224",
 		criteria = {"timed", "forward", "backwards", "average"},
+		note = 'aka "VGG"',
 		priority = nil,
 	},
 	{
