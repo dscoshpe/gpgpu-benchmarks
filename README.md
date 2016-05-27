@@ -4,23 +4,25 @@ Compiling information about various GPGPU benchmarks. This is a work in progress
 *Note: this readme is generated from the other files in this repo.*
 
 ## Configurations
-Tracking known system configurations.
+Tracking system configurations.
 
 | config | framework | library | precision | note | reproduced | priority |
 | --- |--- |--- |--- |--- |--- |--- |
 | Torch (native) | [Torch](http://torch.ch/) | (native) |  |  | true |  |
 | Torch + fbfft | [Torch](http://torch.ch/) | [fbfft](https://github.com/facebook/fbcunn/tree/master/src/fft) |  | should actually be called 'fbcunn'? dont use fbcunn.SpatialConvolution | true |  |
-| Torch + cuDNN(R2) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R2 |  |  |  |  |
-| Torch + cuDNN(R4, 16) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 16 | CUDA 7.5 for FP16 precision |  |  |
+| Torch + cuDNN(R2) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R2 |  | Dont have cuDNN r2 | false |  |
+| Torch + cuDNN(R4, 16) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 16 | not sure how to enable yet | false |  |
 | Torch + cuDNN(R4, 32) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 32 |  | true |  |
-| Torch + cudaconvnet2 | [Torch](http://torch.ch/) | [cudaconvnet2](https://code.google.com/p/cuda-convnet/) |  |  |  |  |
-| Torch + clnn | [Torch](http://torch.ch/) | [clnn](https://github.com/hughperkins/clnn) |  | OpenCL only (I think) |  |  |
-| Caffe (native) | [Caffe](https://github.com/BVLC/caffe) | (native) |  | cuDNN is optional |  |  |
-| Caffe + GreenTea | [Caffe](https://github.com/BVLC/caffe) | [GreenTea](https://github.com/naibaf7/caffe) |  | Caffe + OpenCL backend |  |  |
-| TensorFlow + cuDNN | [TensorFlow](https://www.tensorflow.org/) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  |  |  |
-| Chainer + cuDNN | [Chainer](https://github.com/pfnet/chainer) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  |  |  |
-| neon(16) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 16 | CUDA 7.5 for FP16 precision |  |  |
-| neon(32) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 32 |  |  |  |
+| Torch + cudaconvnet2 | [Torch](http://torch.ch/) | [cudaconvnet2](https://code.google.com/p/cuda-convnet/) |  | In cudaconv2 branch, not master. | true |  |
+| Torch + clnn | [Torch](http://torch.ch/) | [clnn](https://github.com/hughperkins/clnn) |  | OpenCL only. Follows its own (older) Torch version. | true |  |
+| Torch + nnBHDW | [Torch](http://torch.ch/) | nnBHWD |  | Won't build, unused. | false |  |
+| Caffe (native) | [Caffe](https://github.com/BVLC/caffe) | (native) |  | cuDNN is optional | true |  |
+| Caffe + cuDNN | [Caffe](https://github.com/BVLC/caffe) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true |  |
+| Caffe + GreenTea | [Caffe](https://github.com/BVLC/caffe) | [GreenTea](https://github.com/naibaf7/caffe) |  | Caffe + OpenCL backend | true |  |
+| TensorFlow + cuDNN | [TensorFlow](https://www.tensorflow.org/) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true |  |
+| Chainer + cuDNN | [Chainer](https://github.com/pfnet/chainer) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true |  |
+| neon(16) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 16 | nvcc kernel compile fails. (because I have Kepler?) | false |  |
+| neon(32) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 32 |  | true |  |
 
 ## Benchmarks
 Attributes of benchmarks.
@@ -40,7 +42,7 @@ Information about the data sets used for benchmarks.
 | [ImageNet](http://image-net.org/) | 2012, 2013, 2014 |
 
 ## Suites
-Known collections of benchmarks.
+Some collections of benchmarks.
 
 * [convnet](https://github.com/soumith/convnet-benchmarks)
     * focused on imagenet models and convolutional neural networks

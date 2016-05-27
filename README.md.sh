@@ -6,7 +6,7 @@ Compiling information about various GPGPU benchmarks. This is a work in progress
 *Note: this readme is generated from the other files in this repo.*
 
 ## Configurations
-Tracking known system configurations.
+Tracking system configurations.
 
 $(./lt2md.lua links.lua configs.lua)
 
@@ -21,7 +21,7 @@ Information about the data sets used for benchmarks.
 $(./lt2md.lua links.lua data.lua)
 
 ## Suites
-Known collections of benchmarks.
+Some collections of benchmarks.
 
 * [convnet](https://github.com/soumith/convnet-benchmarks)
     * focused on imagenet models and convolutional neural networks

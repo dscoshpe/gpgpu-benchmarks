@@ -81,3 +81,236 @@ fbnn                               :accGradParameters():     904.12
 fbnn                                           :Forward:     892.82	
 fbnn                                          :Backward:    1639.29	
 fbnn                                             :TOTAL:    2532.11	
+
+Running on device: Quadro K6000	
+Using NVIDIA Corporation , OpenCL platform: NVIDIA CUDA
+Using OpenCL device: Quadro K6000
+ModelType: OverFeat[fast]	Kernels: clnn	Input shape: 128x3x231x231	
+clnn                                    :updateOutput():    1607.84	
+clnn                                 :updateGradInput():     959.22	
+clnn                               :accGradParameters():     854.35	
+clnn                                           :Forward:    1607.84	
+clnn                                          :Backward:    1813.57	
+clnn                                             :TOTAL:    3421.41	
+ModelType: AlexNet	Kernels: clnn	Input shape: 128x3x224x224	
+clnn                                    :updateOutput():     497.82	
+clnn                                 :updateGradInput():     308.92	
+clnn                               :accGradParameters():     846.60	
+clnn                                           :Forward:     497.82	
+clnn                                          :Backward:    1155.51	
+clnn                                             :TOTAL:    1653.34	
+ModelType: VGG Model-A	Kernels: clnn	Input shape: 64x3x224x224	
+clnn                                    :updateOutput():    1473.98	
+clnn                                 :updateGradInput():    1154.93	
+clnn                               :accGradParameters():    2069.17	
+clnn                                           :Forward:    1473.98	
+clnn                                          :Backward:    3224.09	
+clnn                                             :TOTAL:    4698.08	
+ModelType: GoogleNet	Kernels: clnn	Input shape: 128x3x224x224	
+clnn                                    :updateOutput():    1394.09	
+clnn                                 :updateGradInput():    1114.26	
+clnn                               :accGradParameters():    2303.31	
+clnn                                           :Forward:    1394.09	
+clnn                                          :Backward:    3417.58	
+clnn                                             :TOTAL:    4811.67	
+
+Running on device: Quadro K6000	
+ModelType: VGG Model-A	Kernels: cuda-convnet2	Input shape: 3x224x224x64	
+cuda-convnet2                           :updateOutput():     927.27	
+cuda-convnet2                        :updateGradInput():    1001.51	
+cuda-convnet2                      :accGradParameters():     580.62	
+cuda-convnet2                                  :Forward:     927.27	
+cuda-convnet2                                 :Backward:    1582.13	
+cuda-convnet2                                    :TOTAL:    2509.40	
+ModelType: OverFeat[fast]	Kernels: cuda-convnet2	Input shape: 3x231x231x128	
+cuda-convnet2                           :updateOutput():     391.60	
+cuda-convnet2                        :updateGradInput():     410.13	
+cuda-convnet2                      :accGradParameters():     502.97	
+cuda-convnet2                                  :Forward:     391.60	
+cuda-convnet2                                 :Backward:     913.10	
+cuda-convnet2                                    :TOTAL:    1304.70	
+ModelType: AlexNet	Kernels: cuda-convnet2	Input shape: 3x224x224x128	
+cuda-convnet2                           :updateOutput():      89.06	
+cuda-convnet2                        :updateGradInput():      92.00	
+cuda-convnet2                      :accGradParameters():     100.35	
+cuda-convnet2                                  :Forward:      89.06	
+cuda-convnet2                                 :Backward:     192.35	
+cuda-convnet2                                    :TOTAL:     281.42	
+
+Caffe(native)
+alexnet:
+I0527 02:13:30.136029  4195 caffe.cpp:377] Average Forward pass: 191.476 ms.
+I0527 02:13:30.136042  4195 caffe.cpp:379] Average Backward pass: 371.575 ms.
+I0527 02:13:30.136057  4195 caffe.cpp:381] Average Forward-Backward: 563.171 ms.
+I0527 02:13:30.136070  4195 caffe.cpp:383] Total Time: 5631.71 ms.
+overfeat:
+I0527 02:13:50.616349  4203 caffe.cpp:377] Average Forward pass: 670.953 ms.
+I0527 02:13:50.616365  4203 caffe.cpp:379] Average Backward pass: 971.165 ms.
+I0527 02:13:50.616379  4203 caffe.cpp:381] Average Forward-Backward: 1642.25 ms.
+I0527 02:13:50.616391  4203 caffe.cpp:383] Total Time: 16422.5 ms.
+vgg_a:
+I0527 02:14:13.805335  4300 caffe.cpp:377] Average Forward pass: 538.896 ms.
+I0527 02:14:13.805349  4300 caffe.cpp:379] Average Backward pass: 1358.53 ms.
+I0527 02:14:13.805363  4300 caffe.cpp:381] Average Forward-Backward: 1897.58 ms.
+I0527 02:14:13.805377  4300 caffe.cpp:383] Total Time: 18975.8 ms.
+googlenet:
+I0527 02:14:40.783159  4307 caffe.cpp:377] Average Forward pass: 786.369 ms.
+I0527 02:14:40.783175  4307 caffe.cpp:379] Average Backward pass: 1491.36 ms.
+I0527 02:14:40.783190  4307 caffe.cpp:381] Average Forward-Backward: 2278.12 ms.
+I0527 02:14:40.783205  4307 caffe.cpp:383] Total Time: 22781.2 ms.
+
+
+Caffe+cuDNN
+alexnet:
+I0527 02:25:48.113086 13231 caffe.cpp:377] Average Forward pass: 94.2589 ms.
+I0527 02:25:48.113101 13231 caffe.cpp:379] Average Backward pass: 254.403 ms.
+I0527 02:25:48.113113 13231 caffe.cpp:381] Average Forward-Backward: 348.768 ms.
+I0527 02:25:48.113126 13231 caffe.cpp:383] Total Time: 3487.68 ms.
+overfeat:
+I0527 02:26:03.078953 13239 caffe.cpp:377] Average Forward pass: 288.921 ms.
+I0527 02:26:03.078966 13239 caffe.cpp:379] Average Backward pass: 840.083 ms.
+I0527 02:26:03.078979 13239 caffe.cpp:381] Average Forward-Backward: 1129.11 ms.
+I0527 02:26:03.078991 13239 caffe.cpp:383] Total Time: 11291.1 ms.
+vgg_a:
+I0527 02:26:22.724025 13248 caffe.cpp:377] Average Forward pass: 408.832 ms.
+I0527 02:26:22.724040 13248 caffe.cpp:379] Average Backward pass: 1144.48 ms.
+I0527 02:26:22.724052 13248 caffe.cpp:381] Average Forward-Backward: 1553.44 ms.
+I0527 02:26:22.724066 13248 caffe.cpp:383] Total Time: 15534.4 ms.
+googlenet:
+I0527 02:26:37.385758 13253 caffe.cpp:377] Average Forward pass: 301.742 ms.
+I0527 02:26:37.385772 13253 caffe.cpp:379] Average Backward pass: 832.988 ms.
+I0527 02:26:37.385787 13253 caffe.cpp:381] Average Forward-Backward: 1135.08 ms.
+I0527 02:26:37.385799 13253 caffe.cpp:383] Total Time: 11350.8 ms.
+
+Caffe+GreenTea
+alexnet:
+I0527 03:26:58.413877 16694 caffe.cpp:424] Average Forward pass: 3665.5 ms.
+I0527 03:26:58.413894 16694 caffe.cpp:426] Average Backward pass: 4390.58 ms.
+I0527 03:26:58.413908 16694 caffe.cpp:428] Average Forward-Backward: 8056.3 ms.
+I0527 03:26:58.413918 16694 caffe.cpp:430] Total Time: 80563 ms.
+overfeat:
+I0527 03:24:25.471035 16609 caffe.cpp:424] Average Forward pass: 13587.7 ms.
+I0527 03:24:25.471051 16609 caffe.cpp:426] Average Backward pass: 14783.1 ms.
+I0527 03:24:25.471063 16609 caffe.cpp:428] Average Forward-Backward: 28371.1 ms.
+I0527 03:24:25.471073 16609 caffe.cpp:430] Total Time: 283711 ms.
+vgg_a:
+I0527 03:38:47.814184 16815 caffe.cpp:424] Average Forward pass: 14024.8 ms.
+I0527 03:38:47.814200 16815 caffe.cpp:426] Average Backward pass: 21808 ms.
+I0527 03:38:47.814213 16815 caffe.cpp:428] Average Forward-Backward: 35833.1 ms.
+I0527 03:38:47.814223 16815 caffe.cpp:430] Total Time: 358331 ms.
+googlenet:
+I0527 03:43:10.919533 16854 caffe.cpp:424] Average Forward pass: 9999.77 ms.
+I0527 03:43:10.919556 16854 caffe.cpp:426] Average Backward pass: 13748.7 ms.
+I0527 03:43:10.919569 16854 caffe.cpp:428] Average Forward-Backward: 23748.8 ms.
+I0527 03:43:10.919579 16854 caffe.cpp:430] Total Time: 237488 ms.
+
+neon(32)
+alexnet:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  118.38     |  118.29     |  118.07     |  118.98     |    msec     |
+| bprop       |  342.7      |  342.76     |  342.26     |  343.02     |    msec     |
+| iteration   |  461.08     |  461.09     |  460.35     |  461.71     |    msec     |
+-------------------------------------------------------------------------------------
+overfeat:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  449.57     |  449.62     |  448.96     |  449.96     |    msec     |
+| bprop       |  1351.9     |  1352       |  1350.8     |  1353.1     |    msec     |
+| iteration   |  1801.4     |  1801.5     |  1799.9     |  1802.8     |    msec     |
+-------------------------------------------------------------------------------------
+vgg_a:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  675.67     |  675.82     |  675.28     |  675.94     |    msec     |
+| bprop       |  2109.7     |  2109.8     |  2109       |  2110.3     |    msec     |
+| iteration   |  2785.4     |  2785.5     |  2784.3     |  2786.2     |    msec     |
+-------------------------------------------------------------------------------------
+googlenet:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  320.02     |  319.99     |  319.94     |  320.15     |    msec     |
+| bprop       |  876.27     |  876.22     |  875.86     |  876.83     |    msec     |
+| iteration   |  1196.3     |  1196.2     |  1195.9     |  1196.9     |    msec     |
+-------------------------------------------------------------------------------------
+
+neon(16)
+errors
+
+neon(32)/Docker
+alexnet:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  118.23     |  118.21     |  118.07     |  118.47     |    msec     |
+| bprop       |  342.52     |  342.57     |  342.13     |  342.94     |    msec     |
+| iteration   |  460.76     |  460.82     |  460.24     |  461.15     |    msec     |
+-------------------------------------------------------------------------------------
+overfeat:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  449.14     |  449.18     |  448.64     |  449.52     |    msec     |
+| bprop       |  1350.7     |  1350.5     |  1348.4     |  1353       |    msec     |
+| iteration   |  1799.8     |  1799.6     |  1797.2     |  1802.2     |    msec     |
+-------------------------------------------------------------------------------------
+vgg_a:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  676.89     |  676.79     |  676.35     |  677.44     |    msec     |
+| bprop       |  2113       |  2113.1     |  2112.2     |  2113.9     |    msec     |
+| iteration   |  2789.9     |  2790.2     |  2788.5     |  2791       |    msec     |
+-------------------------------------------------------------------------------------
+googlenet:
+-------------------------------------------------------------------------------------
+|    Func     |    Mean     |   Median    |     Min     |     Max     |    Units    |
+-------------------------------------------------------------------------------------
+| fprop       |  320.54     |  320.53     |  320.47     |  320.62     |    msec     |
+| bprop       |  877.23     |  877.31     |  876.68     |  877.51     |    msec     |
+| iteration   |  1197.8     |  1197.8     |  1197.2     |  1198.1     |    msec     |
+-------------------------------------------------------------------------------------
+
+neon(16)/Docker
+errors
+
+TensorFlow
+alexnet:
+2016-05-27 14:39:13.497686: Forward across 100 steps, 0.056 +/- 0.006 sec / batch
+2016-05-27 14:39:31.784908: Forward-backward across 100 steps, 0.163 +/- 0.016 sec / batch
+overfeat:
+2016-05-27 14:41:14.598962: Forward across 100 steps, 0.242 +/- 0.028 sec / batch
+2016-05-27 14:42:17.275349: Forward-backward across 100 steps, 0.565 +/- 0.057 sec / batch
+vgg_a:
+2016-05-27 14:44:04.353634: Forward across 100 steps, 0.321 +/- 0.032 sec / batch
+2016-05-27 14:46:13.582732: Forward-backward across 100 steps, 1.170 +/- 0.132 sec / batch
+googlenet:
+2016-05-27 14:48:26.241457: Forward across 100 steps, 0.261 +/- 0.026 sec / batch
+2016-05-27 14:50:09.306246: Forward-backward across 100 steps, 0.923 +/- 0.102 sec / batch
+
+Chainer
+alexnet:
+Average Forward:   84.8835006714  ms
+Average Backward:  231.824666214  ms
+Average Total:     317.708166885  ms
+overfeat:
+Average Forward:   259.622305298  ms
+Average Backward:  767.12783556  ms
+Average Total:     1027.75014086  ms
+vgg_a:
+Average Forward:   364.523706055  ms
+Average Backward:  1024.59535837  ms
+Average Total:     1390.11906443  ms
+googlenet:
+Average Forward:   305.493078613  ms
+Average Backward:  814.940816593  ms
+Average Total:     1121.43389521  ms
+googlenet (power limit 225->150W):
+Average Forward:   423.380096436  ms
+Average Backward:  1196.09972897  ms
+Average Total:     1620.4798254  ms
+
