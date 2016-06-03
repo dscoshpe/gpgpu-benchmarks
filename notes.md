@@ -64,11 +64,16 @@ Benchmarks --> image
     * [docs page](http://neon.nervanasys.com/docs/latest/installation.html) is useful too
     * `<benchmark>.py -d f16` enables FP16 support but the kernel compiles fail, so not working yet
     * the [docker container](https://hub.docker.com/r/kaixhin/cuda-neon/) could be optimized for size more, but it works well
+    * install to system or issue `. .venv/bin/activate` to actually use it
 * TensorFlow(current) only supports CUDA 7.5 and cuDNN r4
     * convnet asks for older version in the tensorflow/README but it works with current
         * i installed via [these instructions](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html#pip-installation) rather than the readme
-    * the python scripts work out of the box, dont bother with bazel
+    * the python scripts work out of the box for a specific cuDNN version (R4?), otherwise rebuild with bazel
 * jic, dont forget: `export CUDA_HOME=/usr/local/cuda`
 * `nvidia-smi dmon` is fun
     * setting [power limits](https://www.ibm.com/support/knowledgecenter/SSFHY8_5.4.0/com.ibm.cluster.essl.v5r4.essl100.doc/am5gr_nvidcap.htm)
-
+* cuDNN FP16 support in Torch requires up-to-date [cutorch](https://github.com/torch/cutorch) and [cudnn.torch](https://github.com/soumith/cudnn.torch) and cuDNN >=7.5
+    * use the "half" branch of cudnn.torch
+    * use appropriate branch for cuDNN version too
+* Torch+cuDNN based benchmarks must user multiple GPUs explicitly. Current convnet-benchmarks do not do it, must be created.
+* [imagenet benchmarks](https://github.com/soumith/imagenet-multiGPU.torch) specifically for multi-gpu

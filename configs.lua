@@ -3,7 +3,7 @@
 --]]
 return {
 headers = {
-	"config", "framework", "library", "precision", "note", "reproduced", "priority"
+	"config", "framework", "library", "precision", "note", "reproduced", "multigpu"
 },
 records = {
 ------------------------------------------------------------------------- Torch
@@ -15,16 +15,28 @@ records = {
 		library = "(native)",
 		class = "SpatialConvolutionMM",
 		reproduced = true,
+		multigpu = "no",
 	},
 	{
-		config = "Torch + fbfft",
+		config = "Torch + cunn",
+		benchmarks = {"AlexNet", "Overfeat [fast]", "OxfordNet [Model-A]"},
+		suites = "convnet",
+		framework = "Torch",
+		library = "cunn",
+		class = "SpatialConvolutionMM",
+		reproduced = true,
+		multigpu = "yes/create",
+	},
+	{
+		config = "Torch + fbcunn",
 		benchmarks = {"AlexNet", "Overfeat [fast]", "OxfordNet [Model-A]"},
 		suites = "convnet",
 		framework = "Torch",
 		library = "fbfft",
 		class = "nn.SpatialConvolutionMM",
-		note = "should actually be called 'fbcunn'? dont use fbcunn.SpatialConvolution",
+		note = "dont use fbcunn.SpatialConvolution",
 		reproduced = true,
+		multigpu = "yes/create",
 	},
 	{
 		config = "Torch + cuDNN(R2)",
@@ -35,6 +47,7 @@ records = {
 		class = "cudnn.SpatialConvolution",
 		note = "Dont have cuDNN r2",
 		reproduced = false,
+		multigpu = "yes/create",
 	},
 	{
 		config = "Torch + cuDNN(R4, 16)",
@@ -44,8 +57,9 @@ records = {
 		library = {"cuDNN", "R4"},
 		class = "cudnn.SpatialConvolution",
 		precision = 16,
-		note = "not sure how to enable yet",
-		reproduced = false,
+		note = 'using "fake" fp16 support',
+		reproduced = true,
+		multigpu = "yes/create",
 	},
 	{
 		config = "Torch + cuDNN(R4, 32)",
@@ -56,6 +70,7 @@ records = {
 		class = "cudnn.SpatialConvolution",
 		precision = 32,
 		reproduced = true,
+		multigpu = "yes/create",
 	},
 	{
 		config = "Torch + cudaconvnet2",
@@ -66,6 +81,7 @@ records = {
 		class = "ConvLayer",
 		note = "In cudaconv2 branch, not master.",
 		reproduced = true,
+		multigpu = "yes/create",
 	},
 	{
 		config = "Torch + clnn",
@@ -77,6 +93,7 @@ records = {
 		blas = "clBLAS",
 		note = "OpenCL only. Follows its own (older) Torch version.",
 		reproduced = true,
+		multigpu = "yes/create",
 	},
 	{
 		config = "Torch + nnBHDW",
@@ -87,6 +104,7 @@ records = {
 		class = "nn.SpatialConvolutionBHWD",
 		note = "Won't build, unused.",
 		reproduced = false,
+		multigpu = nil,
 	},
 ------------------------------------------------------------------------- Caffe
 	{
@@ -99,6 +117,7 @@ records = {
 		blas = {"**ATLAS**", "Intel MKL", "OpenBLAS"},
 		note = "cuDNN is optional",
 		reproduced = true,
+		multigpu = "no",
 	},
 	{
 		config = "Caffe + cuDNN",
@@ -109,6 +128,7 @@ records = {
 		class = "ConvolutionLayer",
 		blas = {"**ATLAS**", "Intel MKL", "OpenBLAS"},
 		reproduced = true,
+		multigpu = "kind of",
 	},
 	{
 		config = "Caffe + GreenTea",
@@ -120,6 +140,7 @@ records = {
 		blas = {"ATLAS", "Intel MKL", "?OpenBLAS?", "cuBLAS", "?clBLAS?", "?ViennaCL?"},
 		note = "Caffe + OpenCL backend",
 		reproduced = true,
+		multigpu = nil,
 	},
 ------------------------------------------------------------------------ others
 	{
@@ -130,6 +151,7 @@ records = {
 		library = "cuDNN",
 		class = "conv2d",
 		reproduced = true,
+		multigpu = "yes",
 	},
 	{
 		config = "Chainer + cuDNN",
@@ -139,6 +161,7 @@ records = {
 		library = "cuDNN",
 		class = "Convolution2D",
 		reproduced = true,
+		multigpu = "yes/create",
 	},
 -------------------------------------------------------------------------- neon
 	{
@@ -151,6 +174,7 @@ records = {
 		precision = 16,
 		note = "nvcc kernel compile fails. (because I have Kepler?)",
 		reproduced = false,
+		multigpu = "yes/purchase",
 	},
 	{
 		config = "neon(32)",
@@ -161,6 +185,7 @@ records = {
 		class = "ConvLayer",
 		precision = 32,
 		reproduced = true,
+		multigpu = "yes/purchase",
 	},
 -------------------------------------------------------------------------- misc
 

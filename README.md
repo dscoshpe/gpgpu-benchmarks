@@ -6,23 +6,24 @@ Compiling information about various GPGPU benchmarks. This is a work in progress
 ## Configurations
 Tracking system configurations.
 
-| config | framework | library | precision | note | reproduced | priority |
+| config | framework | library | precision | note | reproduced | multigpu |
 | --- |--- |--- |--- |--- |--- |--- |
-| Torch (native) | [Torch](http://torch.ch/) | (native) |  |  | true |  |
-| Torch + fbfft | [Torch](http://torch.ch/) | [fbfft](https://github.com/facebook/fbcunn/tree/master/src/fft) |  | should actually be called 'fbcunn'? dont use fbcunn.SpatialConvolution | true |  |
-| Torch + cuDNN(R2) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R2 |  | Dont have cuDNN r2 | false |  |
-| Torch + cuDNN(R4, 16) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 16 | not sure how to enable yet | false |  |
-| Torch + cuDNN(R4, 32) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 32 |  | true |  |
-| Torch + cudaconvnet2 | [Torch](http://torch.ch/) | [cudaconvnet2](https://code.google.com/p/cuda-convnet/) |  | In cudaconv2 branch, not master. | true |  |
-| Torch + clnn | [Torch](http://torch.ch/) | [clnn](https://github.com/hughperkins/clnn) |  | OpenCL only. Follows its own (older) Torch version. | true |  |
+| Torch (native) | [Torch](http://torch.ch/) | (native) |  |  | true | no |
+| Torch + cunn | [Torch](http://torch.ch/) | cunn |  |  | true | yes/create |
+| Torch + fbcunn | [Torch](http://torch.ch/) | [fbfft](https://github.com/facebook/fbcunn/tree/master/src/fft) |  | dont use fbcunn.SpatialConvolution | true | yes/create |
+| Torch + cuDNN(R2) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R2 |  | Dont have cuDNN r2 | false | yes/create |
+| Torch + cuDNN(R4, 16) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 16 | using "fake" fp16 support | true | yes/create |
+| Torch + cuDNN(R4, 32) | [Torch](http://torch.ch/) | [cuDNN](https://developer.nvidia.com/cudnn), R4 | 32 |  | true | yes/create |
+| Torch + cudaconvnet2 | [Torch](http://torch.ch/) | [cudaconvnet2](https://code.google.com/p/cuda-convnet/) |  | In cudaconv2 branch, not master. | true | yes/create |
+| Torch + clnn | [Torch](http://torch.ch/) | [clnn](https://github.com/hughperkins/clnn) |  | OpenCL only. Follows its own (older) Torch version. | true | yes/create |
 | Torch + nnBHDW | [Torch](http://torch.ch/) | nnBHWD |  | Won't build, unused. | false |  |
-| Caffe (native) | [Caffe](https://github.com/BVLC/caffe) | (native) |  | cuDNN is optional | true |  |
-| Caffe + cuDNN | [Caffe](https://github.com/BVLC/caffe) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true |  |
+| Caffe (native) | [Caffe](https://github.com/BVLC/caffe) | (native) |  | cuDNN is optional | true | no |
+| Caffe + cuDNN | [Caffe](https://github.com/BVLC/caffe) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true | kind of |
 | Caffe + GreenTea | [Caffe](https://github.com/BVLC/caffe) | [GreenTea](https://github.com/naibaf7/caffe) |  | Caffe + OpenCL backend | true |  |
-| TensorFlow + cuDNN | [TensorFlow](https://www.tensorflow.org/) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true |  |
-| Chainer + cuDNN | [Chainer](https://github.com/pfnet/chainer) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true |  |
-| neon(16) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 16 | nvcc kernel compile fails. (because I have Kepler?) | false |  |
-| neon(32) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 32 |  | true |  |
+| TensorFlow + cuDNN | [TensorFlow](https://www.tensorflow.org/) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true | yes |
+| Chainer + cuDNN | [Chainer](https://github.com/pfnet/chainer) | [cuDNN](https://developer.nvidia.com/cudnn) |  |  | true | yes/create |
+| neon(16) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 16 | nvcc kernel compile fails. (because I have Kepler?) | false | yes/purchase |
+| neon(32) | [Nervana neon](https://github.com/nervanasystems/neon) | (native) | 32 |  | true | yes/purchase |
 
 ## Benchmarks
 Attributes of benchmarks.
