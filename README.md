@@ -56,3 +56,5 @@ Some collections of benchmarks.
         * [SHOC](https://github.com/vetter/shoc)
         * [Rodinia](https://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php/Rodinia:Accelerating_Compute-Intensive_Applications_with_Accelerators)
         * [Eigen](https://bitbucket.org/eigen/eigen)'s [Tensor](https://bitbucket.org/eigen/eigen/src/c877e66df97d061177ea01f43d2f4540532a3f77/unsupported/Eigen/CXX11/src/Tensor/)
+* [CNTK/etc](https://github.com/Alexey-Kamenev/Benchmarks)
+	* collection of framework benchmarks from Microsoft CNTK team
